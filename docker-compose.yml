@@ -1,0 +1,84 @@
+---
+name: hmadv-classic
+
+services:
+  traefik:
+    image: traefik:v2.11
+
+    ports:
+      - 80:80
+
+    labels:
+      - traefik.enable=true
+      - traefik.constraint-label=public
+      - traefik.http.routers.traefik-public-http.rule=Host(`traefik.hmadv-classic.localhost`)
+      - traefik.http.routers.traefik-public-http.entrypoints=http
+      - traefik.http.routers.traefik-public-http.service=api@internal
+      - traefik.http.services.traefik-public.loadbalancer.server.port=8000
+
+      # GENERIC MIDDLEWARES
+      - traefik.http.middlewares.gzip.compress=true
+      - traefik.http.middlewares.gzip.compress.excludedcontenttypes=image/png, image/jpeg, font/woff2
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+    command:
+      - --providers.docker
+      - --providers.docker.constraints=Label(`traefik.constraint-label`, `public`)
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.http.address=:80
+      - --accesslog
+      - --log
+      - --api
+  purger:
+    image: ghcr.io/kitconcept/cluster-purger:latest
+    environment:
+      PURGER_SERVICE_NAME: varnish
+      PURGER_SERVICE_PORT: 80
+      PURGER_MODE: "compose"
+      PURGER_PUBLIC_SITES: "['hmadv-classic.localhost']"
+
+  varnish:
+    build:
+      context: devops/varnish
+    labels:
+      - traefik.enable=true
+      - traefik.constraint-label=public
+      # SERVICE
+      - traefik.http.services.svc-varnish.loadbalancer.server.port=80
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      args:
+        - PLONE_VERSION=${PLONE_VERSION}
+    volumes:
+      - vol-site-data:/data
+    labels:
+      - traefik.enable=true
+      - traefik.constraint-label=public
+      # Service
+      - traefik.http.services.svc-backend.loadbalancer.server.port=8080
+
+      # Middleware
+      ## VHM points to /Plone
+      - "traefik.http.middlewares.mw-backend-vhm-classic.addprefix.prefix=/VirtualHostBase/http/hmadv-classic.localhost/Plone/VirtualHostRoot/"
+
+      # Routers
+      ## Router: From incoming to Varnish (public)
+      - traefik.http.routers.rt-backend-public.rule=Host(`hmadv-classic.localhost`)
+      - traefik.http.routers.rt-backend-public.entrypoints=http
+      - traefik.http.routers.rt-backend-public.service=svc-varnish
+      - traefik.http.routers.rt-backend-public.middlewares=gzip
+
+      ## Router: from Varnish to backend (internal)
+      - traefik.http.routers.rt-backend-internal.rule=Host(`hmadv-classic.localhost`) && Headers(`X-Varnish-Routed`, `1`)
+      - traefik.http.routers.rt-backend-internal.entrypoints=http
+      - traefik.http.routers.rt-backend-internal.service=svc-backend
+      - traefik.http.routers.rt-backend-internal.middlewares=mw-backend-vhm-classic
+
+volumes:
+  vol-site-data: {}
