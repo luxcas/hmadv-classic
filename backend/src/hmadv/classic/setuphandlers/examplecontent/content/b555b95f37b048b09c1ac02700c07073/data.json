@@ -1,0 +1,43 @@
+{
+  "@id": "/clientes/nome-da-empresa",
+  "@type": "cliente_pj",
+  "UID": "b555b95f37b048b09c1ac02700c07073",
+  "allow_discussion": null,
+  "contributors": [],
+  "created": "2025-11-10T22:06:29+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "email": "luxcas@gmail.com",
+  "expires": null,
+  "exportimport.constrains": {},
+  "id": "nome-da-empresa",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-11-10T22:06:29+00:00",
+  "representante": "Severino blablabl",
+  "review_state": "private",
+  "rights": null,
+  "sigla": "AJUF",
+  "subjects": [],
+  "telefone": "6199999999",
+  "title": "Nome da Empresa",
+  "type_title": "Cliente PJ",
+  "uf": null,
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-11-10T22:06:29+00:00"
+      }
+    ]
+  }
+}

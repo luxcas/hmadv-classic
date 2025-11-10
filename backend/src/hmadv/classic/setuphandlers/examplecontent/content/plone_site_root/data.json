@@ -16,6 +16,7 @@
   "is_folderish": true,
   "items_total": 1,
   "language": "##DEFAULT##",
+  "layout": "document_view",
   "lock": {
     "locked": false,
     "stealable": true

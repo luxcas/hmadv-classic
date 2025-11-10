@@ -1,0 +1,38 @@
+{
+  "@id": "/clientes",
+  "@type": "clientes",
+  "UID": "f67fcf596b834948a8cfbdb0ecdb382d",
+  "allow_discussion": null,
+  "contributors": [],
+  "created": "2025-11-10T22:03:36+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "expires": null,
+  "exportimport.constrains": {},
+  "id": "clientes",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-11-10T22:06:29+00:00",
+  "review_state": "private",
+  "rights": null,
+  "subjects": [],
+  "title": "Clientes",
+  "type_title": "Clientes",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-11-10T22:03:36+00:00"
+      }
+    ]
+  }
+}

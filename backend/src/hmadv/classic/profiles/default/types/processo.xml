@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="processo" meta_type="Dexterity FTI" i18n:domain="plone"
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+ <property name="title" i18n:translate="">Processo</property>
+ <property name="icon_expr">string:file-earmark-text</property>
+ <property name="factory">processo</property>
+ <property
+    name="add_view_expr">string:${folder_url}/++add++processo</property>
+ <property name="link_target"></property>
+ <property name="immediate_view">view</property>
+ <property name="global_allow">True</property>
+ <property name="filter_content_types">True</property>
+ <property name="allowed_content_types"/>
+ <property name="allow_discussion">False</property>
+ <property name="default_view">view</property>
+ <property name="view_methods">
+  <element value="view"/>
+ </property>
+ <property name="default_view_fallback">False</property>
+ <property name="add_permission">cmf.AddPortalContent</property>
+ <property name="klass">plone.dexterity.content.Container</property>
+ <property name="behaviors">
+  <element value="plone.dublincore"/>
+  <element value="plone.namefromtitle"/>
+ </property>
+ <property name="schema"></property>
+ <property
+    name="model_source">&lt;model xmlns:i18n=&quot;http://xml.zope.org/namespaces/i18n&quot; xmlns:form=&quot;http://namespaces.plone.org/supermodel/form&quot; xmlns:security=&quot;http://namespaces.plone.org/supermodel/security&quot; xmlns:marshal=&quot;http://namespaces.plone.org/supermodel/marshal&quot; xmlns:indexer=&quot;http://namespaces.plone.org/supermodel/indexer&quot; xmlns:users=&quot;http://namespaces.plone.org/supermodel/users&quot; xmlns=&quot;http://namespaces.plone.org/supermodel/schema&quot;&gt;
+    &lt;schema&gt;
+      &lt;field name=&quot;classe_processual&quot; type=&quot;zope.schema.TextLine&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Classe Processual&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;escritorio&quot; type=&quot;zope.schema.TextLine&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Escrit&amp;#243;rio&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;situacao&quot; type=&quot;zope.schema.Choice&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Situa&amp;#231;&amp;#227;o&lt;/title&gt;
+        &lt;values/&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;jurisdicao_orgao&quot; type=&quot;zope.schema.TextLine&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Jurisdi&amp;#231;&amp;#227;o/&amp;#243;rg&amp;#227;o&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;parte_adversa&quot; type=&quot;zope.schema.TextLine&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Parte adversa&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;cliente&quot; type=&quot;z3c.relationfield.schema.RelationChoice&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Cliente&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;tema&quot; type=&quot;zope.schema.TextLine&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Tema&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;orgao_julgador&quot; type=&quot;zope.schema.TextLine&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;&amp;#211;rg&amp;#227;o julgador&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;orgao_julgador_telefone&quot; type=&quot;zope.schema.TextLine&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Orgao julgador telefone&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;orgao_julgador_email&quot; type=&quot;plone.schema.email.Email&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Orgao julgador email&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;orgao_julgador_local&quot; type=&quot;zope.schema.TextLine&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Orgao julgador local&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;relator&quot; type=&quot;zope.schema.TextLine&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Relator&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;relator_telefone&quot; type=&quot;zope.schema.TextLine&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Relator telefone&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;relator_email&quot; type=&quot;zope.schema.TextLine&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Relator email&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;relator_local&quot; type=&quot;zope.schema.TextLine&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Relator local&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;resumo_processual&quot; type=&quot;plone.app.textfield.RichText&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Resumo processual&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;ultima_movimentacao&quot; type=&quot;zope.schema.Text&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;&amp;#218;ltima movimenta&amp;#231;&amp;#227;o&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;tarefa_solicitada&quot; type=&quot;plone.app.textfield.RichText&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Tarefa solicitada&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;observacoes&quot; type=&quot;zope.schema.Text&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Observa&amp;#231;&amp;#245;es&lt;/title&gt;
+      &lt;/field&gt;
+    &lt;/schema&gt;
+  &lt;/model&gt;</property>
+ <property name="model_file"></property>
+ <property name="schema_policy">dexterity</property>
+ <alias from="(Default)" to="(dynamic view)"/>
+ <alias from="edit" to="@@edit"/>
+ <alias from="sharing" to="@@sharing"/>
+ <alias from="view" to="(selected layout)"/>
+ <action title="View" action_id="view" category="object" condition_expr=""
+    icon_expr="string:toolbar-action/view" link_target=""
+    url_expr="string:${object_url}" visible="True">
+  <permission value="View"/>
+ </action>
+ <action title="Edit" action_id="edit" category="object" condition_expr=""
+    icon_expr="string:toolbar-action/edit" link_target=""
+    url_expr="string:${object_url}/edit" visible="True">
+  <permission value="Modify portal content"/>
+ </action>
+</object>

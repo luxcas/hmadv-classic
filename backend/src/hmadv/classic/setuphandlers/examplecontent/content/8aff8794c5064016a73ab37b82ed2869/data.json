@@ -1,0 +1,64 @@
+{
+  "@id": "/processos/processo-de-pensao",
+  "@type": "processo",
+  "UID": "8aff8794c5064016a73ab37b82ed2869",
+  "allow_discussion": null,
+  "classe_processual": "BLabla",
+  "contributors": [],
+  "created": "2025-11-10T22:34:18+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "escritorio": null,
+  "expires": null,
+  "exportimport.constrains": {},
+  "id": "processo-de-pensao",
+  "is_folderish": true,
+  "jurisdicao_orgao": "Centro oeste",
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-11-10T22:34:18+00:00",
+  "observacoes": "nda",
+  "orgao_julgador": "JF",
+  "orgao_julgador_email": "teste@gmail.com",
+  "orgao_julgador_local": "Brasilia",
+  "orgao_julgador_telefone": "619999999",
+  "parte_adversa": "Parte perdida",
+  "relator": "Juiz Malandr\u00e3o",
+  "relator_email": "mal@gmail.com",
+  "relator_local": "Ceilandia",
+  "relator_telefone": "619999999",
+  "resumo_processual": {
+    "content-type": "text/html",
+    "data": "<p>blablablablabl</p>",
+    "encoding": "utf-8"
+  },
+  "review_state": "private",
+  "rights": null,
+  "situacao": null,
+  "subjects": [],
+  "tarefa_solicitada": {
+    "content-type": "text/html",
+    "data": "<p>Corerer a tras</p>",
+    "encoding": "utf-8"
+  },
+  "tema": "Criminal",
+  "title": "Processo de pens\u00e3o",
+  "type_title": "Processo",
+  "ultima_movimentacao": "Homologado blablabla ablabla",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-11-10T22:34:18+00:00"
+      }
+    ]
+  }
+}

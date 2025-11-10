@@ -1,0 +1,52 @@
+{
+  "@id": "/clientes/nome-do-cliente",
+  "@type": "cliente",
+  "UID": "96f033f5b22b4a1a9b5447e3e3c71e5e",
+  "allow_discussion": null,
+  "bairro": "Setor Industrial",
+  "cep": "72445010",
+  "cidade": "Brasilia",
+  "contributors": [],
+  "cpf": "77777777777",
+  "created": "2025-11-10T22:05:42+00:00",
+  "creators": [
+    "admin"
+  ],
+  "data_nascimento": "1999-01-01",
+  "description": "",
+  "effective": null,
+  "email": "luxcas@gmail.com",
+  "endereco": "quadra 001",
+  "estado_civil": null,
+  "expires": null,
+  "exportimport.constrains": {},
+  "id": "nome-do-cliente",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-11-10T22:05:42+00:00",
+  "naturalidade": "Brasilia",
+  "orgao_expedidor": "SSP",
+  "profissao": "Analista",
+  "review_state": "private",
+  "rg": "123456788",
+  "rights": null,
+  "subjects": [],
+  "telefone": "6199999999",
+  "title": "Nome do cliente",
+  "type_title": "Cliente",
+  "uf": null,
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-11-10T22:05:42+00:00"
+      }
+    ]
+  }
+}
